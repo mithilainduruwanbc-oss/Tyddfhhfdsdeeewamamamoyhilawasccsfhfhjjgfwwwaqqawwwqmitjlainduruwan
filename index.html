@@ -13,40 +13,40 @@
             align-items: center;
             height: 100vh;
             background-color: #ffeef2;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif;
             overflow: hidden;
             text-align: center;
         }
 
         #first-screen {
             display: block;
+            padding: 20px;
         }
 
         h1 {
             color: #d63384;
             margin-bottom: 30px;
+            font-size: 24px;
         }
 
         .btn-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
         }
 
         button {
-            padding: 15px 30px;
+            padding: 15px;
             font-size: 18px;
             border: none;
-            border-radius: 50px;
+            border-radius: 15px;
             cursor: pointer;
             background-color: #ff4d6d;
             color: white;
             transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            background-color: #c9184a;
+            font-weight: bold;
         }
 
         /* Surprise Section */
@@ -57,14 +57,17 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background-color: #fff0f3;
         }
 
         .photo-container {
-            width: 80%;
-            max-width: 400px;
-            border: 10px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 85%;
+            max-width: 350px;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             animation: fadeIn 2s ease-in-out;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .photo-container img {
@@ -73,21 +76,21 @@
         }
 
         .valentine-text {
-            font-size: 40px;
+            font-size: 28px;
             color: #ff4d6d;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 25px;
             animation: bounce 1.5s infinite;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.8); }
+            from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -96,30 +99,29 @@
     <div id="first-screen">
         <h1>How much do you love me? ❤️</h1>
         <div class="btn-container">
-            <button onclick="wrongAnswer()">20%</button>
-            <button onclick="wrongAnswer()">40%</button>
-            <button onclick="wrongAnswer()">60%</button>
-            <button onclick="showSurprise()">100%</button>
+            <button onclick="wrong()">20%</button>
+            <button onclick="wrong()">40%</button>
+            <button onclick="wrong()">60%</button>
+            <button onclick="show()">100%</button>
         </div>
     </div>
 
     <div id="surprise-screen">
         <div class="photo-container">
-            <img src="https://i.ibb.co/C3Xg3D0D/image.png" alt="Our Romance">
+            <img src="https://i.ibb.co/C3Xg3D0D/image.png" alt="Valentine Photo">
         </div>
         <div class="valentine-text">Happy Valentine's Day! 🌹</div>
     </div>
 
     <script>
-        function wrongAnswer() {
-            alert("Aww.. Thawa tikak hithanna! Try again? 😉");
+        function wrong() {
+            alert("Oya eeeta wada mata adarei neda? 😉 Thawa paarak try karanna!");
         }
 
-        function showSurprise() {
+        function show() {
             document.getElementById('first-screen').style.display = 'none';
             document.getElementById('surprise-screen').style.display = 'flex';
         }
     </script>
 </body>
 </html>
-
