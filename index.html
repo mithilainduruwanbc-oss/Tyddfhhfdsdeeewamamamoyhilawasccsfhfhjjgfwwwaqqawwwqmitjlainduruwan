@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffeef2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #first-screen {
+            display: block;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background-color: #ff4d6d;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #c9184a;
+        }
+
+        /* Surprise Section */
+        #surprise-screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-container {
+            width: 80%;
+            max-width: 400px;
+            border: 10px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .photo-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .valentine-text {
+            font-size: 40px;
+            color: #ff4d6d;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="first-screen">
+        <h1>How much do you love me? ❤️</h1>
+        <div class="btn-container">
+            <button onclick="wrongAnswer()">20%</button>
+            <button onclick="wrongAnswer()">40%</button>
+            <button onclick="wrongAnswer()">60%</button>
+            <button onclick="showSurprise()">100%</button>
+        </div>
+    </div>
+
+    <div id="surprise-screen">
+        <div class="photo-container">
+            <img src="https://i.ibb.co/C3Xg3D0D/image.png" alt="Our Romance">
+        </div>
+        <div class="valentine-text">Happy Valentine's Day! 🌹</div>
+    </div>
+
+    <script>
+        function wrongAnswer() {
+            alert("Aww.. Thawa tikak hithanna! Try again? 😉");
+        }
+
+        function showSurprise() {
+            document.getElementById('first-screen').style.display = 'none';
+            document.getElementById('surprise-screen').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+
